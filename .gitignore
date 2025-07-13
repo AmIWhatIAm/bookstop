@@ -31,6 +31,7 @@ yarn-error.*
 
 # local env files
 .env*.local
+*.env
 
 # typescript
 *.tsbuildinfo
@@ -47,5 +48,3 @@ __pycache__/
 *.sqlite3
 
 app-example
-
-.env
