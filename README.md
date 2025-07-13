@@ -37,11 +37,11 @@
 
 ### 🧠 Tech Stack
 Layer	Tech
-- Frontend: React Native, Expo, JSX
+- Frontend: React Native, Expo
 - Backend: Python, Flask 
 - Database: SQLite
 - Protocols: REST, WebSocket
-- Others: Email verification + password reset, Gemini API implementation
+- Others: Password reset, Gemini API implementation
 
 ---
 
