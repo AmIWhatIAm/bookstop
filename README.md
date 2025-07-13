@@ -20,7 +20,7 @@
 ## 🚀 Features & Architecture
 
 ### 💻 Frontend (React Native)
-- Built with **Expo** and **TypeScript**-ready
+- Built with **Expo**
 - Modular file structure using `app/(tabs)` for routing
 - Custom font support & theme loader
 - Dynamic bookshelf management (`addToShelf`, `readSettings`)
@@ -93,18 +93,6 @@ bookstop-main/
 ├── package.json                 # React Native deps
 └── README.md
 ```
-
-### 🧪 Testing & Validation
-✅ Manual testing on Android Emulator & Physical Device
-✅ API tested via Postman with mocked tokens
-✅ WebSocket tested with 5 concurrent users (no timeout after 60 mins)
-
-
-### 📈 Future Enhancements
- - JWT-based secure authentication
- - Push notifications for community chat
- - Book rating & reviews
- - Integration with public domain sources (e.g. Gutenberg)
 
 ### 📄 License
 This project is licensed under the MIT License.
