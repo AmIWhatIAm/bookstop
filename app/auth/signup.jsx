@@ -231,14 +231,14 @@ export default function Signup() {
         />
       </FormView>
       <FormFooterView>
-        <Divider text="or" />
+        {/* <Divider text="or" />
         <Button
           title="Create account with Google"
           icon="logo-google"
           type="link"
           active
           onPress={handleRegister}
-        />
+        /> */}
         <View style={styles.footer}>
           <Text style={{ opacity: 0.5 }}>
             Already got an account?

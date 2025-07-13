@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react';
+import { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import UserContext from '@/context/UserContext';  // Assuming UserContext is used for user state management
 import { PageView } from '@/components';
 
 const FAQs = [
@@ -24,7 +23,6 @@ const FAQs = [
 ];
 
 export default function FAQ() {
-  const { user } = useContext(UserContext);
   const [activeIndex, setActiveIndex] = useState(null);
 
   // Function to handle the toggling of question answers

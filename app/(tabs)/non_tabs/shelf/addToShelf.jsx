@@ -129,10 +129,7 @@ export default function AddToShelfScreen() {
     setLoading(true);
     setSearchResults([]);
     try {
-      // const url = `https://gutendex.com/books?search=${encodeURIComponent(
-      //   searchTerm.trim()
-      // )}`;
-      const url = `http://192.168.43.114:8000/books?search=${encodeURIComponent(
+      const url = `${process.env.EXPO_PUBLIC_GUTENDEX_API_URL}/books?search=${encodeURIComponent(
         searchTerm.trim()
       )}`;
       console.log("Searching books to add with term:", searchTerm);

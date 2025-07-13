@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import {
   View,
   Text,
@@ -232,6 +232,7 @@ const handlePreviousPage = () => {
                 fontSize,
                 lineHeight: fontSize * lineHeight,
                 color: fontColor,
+                textAlign: "justify"
               }}
             >
               {pageText}

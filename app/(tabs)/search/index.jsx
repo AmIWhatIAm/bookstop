@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';  // Import Ionicons
 import {
   View,
@@ -31,8 +31,7 @@ export default function Search() {
 
   const fetchGenres = async () => {
     try {
-      //const response = await axios.get('https://gutendex.com/books/');
-      const response = await axios.get('http://192.168.43.114:8000/books/');
+      const response = await axios.get(`${process.env.EXPO_PUBLIC_GUTENDEX_API_URL}/books/`);
       const genreSet = new Set();
 
       response.data.results.forEach((book) => {

@@ -70,8 +70,7 @@ export default function BookListScreen() {
   const fetchBooks = async (query, genre) => {
     try {
       console.log('Fetching with:', query, genre);
-      //let url = 'https://gutendex.com/books?';
-      let url = 'http://192.168.43.114:8000/books?';
+      let url = `${process.env.EXPO_PUBLIC_GUTENDEX_API_URL}/books?`;
   
       if (query && query !== 'undefined') {
         url += `search=${encodeURIComponent(query)}`;

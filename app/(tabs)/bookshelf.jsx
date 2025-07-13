@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from "react";
+import { useState, useCallback, useContext } from "react";
 import {
   StyleSheet,
   Pressable,
@@ -34,10 +34,7 @@ export default function Bookshelf() {
   const errorColor = useThemeColor({}, "error");
   const userId = user ? user.id : -1; 
 
-  if (!user) {
-    return <Redirect href="/auth/login" />
-  }
-
+  
   useFocusEffect(
     useCallback(() => {
       fetchBookshelvesCallback();
@@ -45,6 +42,7 @@ export default function Bookshelf() {
     }, [fetchBookshelvesCallback])
   );
   
+
   const fetchBookshelvesCallback = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -111,7 +109,9 @@ export default function Bookshelf() {
     }
   }, []);
 
- 
+ if (!user) {
+      return <Redirect href="/auth/login" />
+    }
 
   const handleAddBookshelf = async () => {
     if (inputValue.trim()) {

@@ -201,7 +201,7 @@ export default function Login() {
       </FormView>
 
       <FormFooterView>
-        <Divider text="or" />
+        {/* <Divider text="or" />
 
         <Button
           title="Log in with Google"
@@ -209,7 +209,7 @@ export default function Login() {
           type="link"
           active
           onPress={handleGoogle}
-        />
+        /> */}
 
         <View style={styles.footer}>
           <Text style={{ opacity: 0.5 }}>Don't have an account?</Text>

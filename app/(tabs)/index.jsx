@@ -1,14 +1,14 @@
-// // Add at the top of your main file
-// import { LogBox } from 'react-native';
+// Add at the top of your main file
+import { LogBox } from 'react-native';
 
 // // Disable all warnings
 // LogBox.ignoreAllLogs();
 
 // // Or disable specific warnings
-// LogBox.ignoreLogs([
-//   'Warning: ...',  // Specific warning to ignore
-//   /another warning/i,  // Can use regex too
-// ]);
+LogBox.ignoreLogs([
+  'VirtualizedLists should never be nested',
+  'VirtualizedList',
+]);
 
 import React, { useState, useEffect, useContext } from "react";
 import { useFocusEffect } from "@react-navigation/native";
@@ -89,12 +89,11 @@ const Home = () => {
         setIsLoading(true);
 
         const bestBooksResponse = await fetch(
-          "http://192.168.43.114:8000/books/?sort=popular"
-          //"https://gutendex.com/books/?sort=popular"
+          `${process.env.EXPO_PUBLIC_GUTENDEX_API_URL}/books/?sort=popular`
         );
+
         const fictionBooksResponse = await fetch(
-          "http://192.168.43.114:8000/books/?topic=fiction"
-          //"https://gutendex.com/books/?topic=fiction"
+          `${process.env.EXPO_PUBLIC_GUTENDEX_API_URL}/books/?topic=fiction`
         );
 
         const bestBooksData = await bestBooksResponse.json();

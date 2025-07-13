@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Alert, View, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { PageView, FormView, FormField, Button, Text } from '@/components';

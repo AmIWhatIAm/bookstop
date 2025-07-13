@@ -66,20 +66,6 @@ const TabLayout = () => {
           href: null,
       }}
       />
-      {/* 
-        Admendment by Jing Hoe, 6/3/2025 11:11AM
-        Action: Commented out codes below
-        Reason: Explore page no longer existed 
-      */}
-      {/* <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
-        }}
-      /> */}
     </Tabs>
   );
 }

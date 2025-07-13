@@ -9,9 +9,6 @@ import {
 } from 'react-native';
 import Slider from '@react-native-community/slider';
 import * as Brightness from 'expo-brightness';
-import { Ionicons } from '@expo/vector-icons';
-
-const { width } = Dimensions.get('window');
 
 const themes = [
   {
@@ -48,8 +45,6 @@ export default function ReadSettings({
   setFontColor = () => {},
   lineHeight = 1.2,
   setLineHeight = () => {},
-  onPrevPage = () => {},
-  onNextPage = () => {},
 }) {
   const [brightness, setBrightness] = useState(1);
 

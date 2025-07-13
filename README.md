@@ -1,6 +1,4 @@
-# 📚 Wireless_Y2S3 – Smart Wireless Bookshelf App
-
-An end-to-end digital bookshelf platform with real-time communication, offline reading, and a self-hosted backend architecture — designed for speed, scalability, and student communities.
+# 📚 BookStop – Book Reader App
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-React%20Native%20%7C%20Python-blue)
@@ -9,13 +7,13 @@ An end-to-end digital bookshelf platform with real-time communication, offline r
 
 ## 📦 Project Overview
 
-**Wireless_Y2S3** is a mobile-first bookshelf and reading app with full support for:
+**BookStop** is a mobile-first bookshelf and reading app with full support for:
 - 📘 **Downloadable books**
 - 🔍 **Advanced search**
 - 🧠 **Chatbot Q&A**
 - 🗣️ **Community channels**
 - 🔐 **Secure login with password reset**
-- 🌐 **Self-hosted backend** with REST & WebSocket APIs
+- 🌐 **REST & WebSocket APIs** 
 
 ---
 
@@ -33,7 +31,7 @@ An end-to-end digital bookshelf platform with real-time communication, offline r
 - 💬 Real-time community chat and chatbot via **WebSocket**
 - 🔐 Auth API with **code verification + password reset**
 - 📦 Book download API with per-user storage
-- 📂 Lightweight SQLite database (~20ms average query time on local)
+- 📂 Lightweight SQLite database
 
 ---
 
@@ -41,9 +39,9 @@ An end-to-end digital bookshelf platform with real-time communication, offline r
 Layer	Tech
 - Frontend: React Native, Expo, JSX
 - Backend: Python, Flask 
-- Database: SQLite, PostgreSQL
+- Database: SQLite
 - Protocols: REST, WebSocket
-- Others: Email verification + password reset, Gemini API implementation, self-hosted Gutendex API
+- Others: Email verification + password reset, Gemini API implementation
 
 ---
 
@@ -51,18 +49,10 @@ Layer	Tech
 
 | Metric                          | Result                      |
 |---------------------------------|-----------------------------|
-| 📡 **Reduced Network Latency** | ~42% faster than Firebase (local APIs < 100ms avg) |
-| 📚 **Self-hosted Gutendex** | Eliminated reliance on public API, enabling <150ms search
 | 📁 **Download Size**           | Book download size avg ~4MB |
-| 🔌 **Offline Mode**            | Book accessible in <1s after first load |
 | 🧠 **AI Chatbot Response**     | <200ms via local WebSocket |
 | 🗃️ **Database Footprint**     | <3MB with 1000+ entries; SQLite optimized |
 
-> ⚡ Self-hosted Gutendex and backend APIs reduced external calls by >90%, ensuring high availability, full-text control, and rapid content indexing even under load.
-
-🧠 Unlike apps that depend on live Gutenberg APIs, this project self-hosts Gutendex — a lightweight search backend for Project Gutenberg.
-This allows faster, more reliable book browsing and downloading even on unstable or offline networks.
-It also provides complete control over search behavior, enabling keyword tuning, metadata filtering, and localized caching.
 ---
 
 ## 🔧 Setup Instructions
@@ -75,6 +65,13 @@ npx expo start
 ```
 
 ### 🐍 Backend (Python)
+To setup the database:
+```bash
+cd backend\db_operations
+python sqlite_setup.py
+```
+
+To run the server:
 ```bash
 cd backend
 pip install -r requirements.txt
@@ -85,7 +82,7 @@ Backend APIs and WebSocket servers start at http://localhost:5000.
 
 ### 🗃️ Folder Structure
 ```
-Wireless_Y2S3-main/
+bookstop-main/
 │
 ├── app/                         # React Native source code
 ├── backend/                     # Python backend

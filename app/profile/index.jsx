@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import {
   View,
   Image,
   StyleSheet,
   ScrollView,
+  Alert,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import UserContext from '@/context/UserContext';
@@ -17,18 +18,48 @@ import {
 
 const ProfileScreen = () => {
   const router = useRouter();
-
   const userContext = useContext(UserContext);
+
+  if (!userContext) {
+    return null; // or a loading component
+  }
 
   const { user, logoutUser } = userContext;
 
+  const handleLogout = async () => {
+    Alert.alert(
+      "Logout",
+      "Are you sure you want to logout?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel"
+        },
+        {
+          text: "Logout",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              await logoutUser();
+            } catch (error) {
+              console.error('Logout error:', error);
+              Alert.alert("Error", "Failed to logout. Please try again.");
+            }
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <PageView header="Profile" type="back">
-        <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         {/* Profile Header */}
         <View style={styles.profileHeader}>
           <Image
-            source={{ uri: user?.photo || "https://avatar.iran.liara.run/username?username=" + (user ? user.username : "Guest") }}
+            source={{ 
+              uri: user?.photo || `https://avatar.iran.liara.run/username?username=${user ? user.username : "Guest"}` 
+            }}
             style={styles.profilePicture}
           />
           {user ? (
@@ -43,14 +74,13 @@ const ProfileScreen = () => {
                 title="Login"
                 active
                 rounded
-                onPress={() => router.navigate("/auth/login")}
+                onPress={() => router.push("/auth/login")}
               />
             </View>
           )}
         </View>
 
         {/* Navigation Options */}
-
         <ProfileSection>
           <ProfileOption
             icon={"help-circle-outline"}
@@ -80,15 +110,15 @@ const ProfileScreen = () => {
         </ProfileSection>
 
         {/* Logout Button */}
-        {user ? (
+        {user && (
           <Button
             title="Log Out"
             type="danger"
             active
-            onPress={logoutUser}
+            onPress={handleLogout}
           />
-        ) : undefined}
-        </ScrollView>
+        )}
+      </ScrollView>
     </PageView>
   );
 };
