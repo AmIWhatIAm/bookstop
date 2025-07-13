@@ -47,3 +47,5 @@ __pycache__/
 *.sqlite3
 
 app-example
+
+.env
